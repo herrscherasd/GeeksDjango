@@ -8,6 +8,7 @@ from apps.academy.models import Academy
 class IndexView(generic.ListView):
     template_name = 'index.html'
     queryset = Academy.objects.all()
+    context_object_name = "courses"
 
 class AboutView(generic.TemplateView):
     template_name = 'about.html'
@@ -15,3 +16,5 @@ class AboutView(generic.TemplateView):
 class ContactsView(generic.TemplateView):
     template_name = 'contacts.html'
 
+# class CourseDetailView(generic.DetailView):
+    

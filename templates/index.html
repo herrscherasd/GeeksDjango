@@ -1,9 +1,10 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>IT курсы</title>
-  </head>
-  <body>
+{% extends 'base.html' %}
+{% block title %}
+Главная страница
+{% endblock %}
+{% block content %}
+    <h1>Главная страница</h1>
+
     <header>
       <nav>
         <ul>
@@ -14,11 +15,12 @@
       </nav>
     </header>
 
-    <!-- <main>
+
+      <main>
       <section>
         <h1>Добро пожаловать на наш сайт IT курсов</h1>
         <p>Мы предлагаем широкий выбор курсов по программированию, веб-разработке, аналитике данных и многому другому.</p>
-        <a href="#">Начать обучение</a>
+
       </section>
 
       <section>
@@ -42,8 +44,26 @@
       </section>
     </main>
 
-    <footer>
-      <p>&copy; 2023 IT курсы</p>
-    </footer>-->
-  </body> 
-</html>
+    <br>
+<section>
+  <div class="row row-cols-lg-1"></div>
+  {% for course in courses %}
+
+  <div class="col row-cols-2">
+    <div class="card w-25 h-50">
+      <div class="card-body">
+        <h5 class="card-title">Special title treatment</h5>
+        <p class="card-text">With supporing text below as a natural lead-in to additional content.</p>
+        <a href="#" class="btn btn-dark">Go somewhere</a>
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>
+  {% endfor %}
+</div>
+</section>
+<br>
+    <a href="{% url 'about' %}">О нас</a>
+    <a href="{% url 'contacts' %}">Контакты</a>
+{% endblock %}
