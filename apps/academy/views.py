@@ -1,4 +1,6 @@
+from django.http import HttpResponse
 from django.shortcuts import redirect
+from django.urls import reverse_lazy
 from django.views import generic
 
 from apps.academy.models import Academy, Courses
@@ -15,15 +17,9 @@ class ContactsView(generic.TemplateView):
 
 class UserFeedbackView(generic.FormView):
     form_class = CourseFeedBackForm
-    success_url = "follow"
+    success_url = reverse_lazy('index')
     template_name = 'order.html'
 
-    def saveorder(self, request):
-        if request.method == 'POST':
-            form = CourseFeedBackForm(request.POST)
-            if form.is_valid():
-                try:
-                    form.save()
-                    return redirect('index')
-                except:
-                    form.add_error(None, "Ошибка при отправлении записи")
+    def form_valid(self, form):
+        form.save()
+        return redirect(self.success_url)
