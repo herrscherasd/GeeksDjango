@@ -1,0 +1,104 @@
+{% extends 'homepage.html' %}
+{% block content %}
+	
+	<!-- Page Title -->
+    <section class="page-title style-two">
+        <div class="auto-container">
+			<h1>Edit Profile</h1>
+        </div>
+    </section>
+    <!--End Page Title-->
+	
+	<!-- Edit Profile Section -->
+	<section class="edit-profile-section">
+		<div class="auto-container">
+			
+			<div class="row clearfix">
+				
+
+				
+				<!-- Content Section -->
+				<div class="content-column col-lg-9 col-md-12 col-sm-12">
+					<div class="inner-column">
+						
+						<!-- Edit Profile Info Tabs-->
+						<div class="edit-profile-info-tabs">
+							<!-- Profile Tabs-->
+							<div class="edit-profile-tabs tabs-box">
+								<!--Tabs Container-->
+								<div class="tabs-content">
+									
+									<!--Tab / Active Tab-->
+									<div class="tab active-tab" id="prod-overview">
+										<div class="content">
+											<!-- Title Box -->
+											<div class="title-box">
+												<h5>Записаться</h5>
+											</div>
+											
+											<!-- Profile Form -->
+											<div class="profile-form">
+											
+												<!-- Profile Form -->
+												<form method="post" action="">
+													{{ form.as_p}}
+													{% csrf_token %}
+													<div class="row clearfix">
+														
+														<div class="col-lg-6 col-md-6 col-sm-12 form-group">
+															<input type="text" name="username" placeholder="Имя" required="">
+															<span class="icon flaticon-edit-1"></span>
+														</div>
+														
+														<div class="col-lg-6 col-md-6 col-sm-12 form-group">
+															<input type="text" name="username" placeholder="Last Name" required="">
+															<span class="icon flaticon-edit-1"></span>
+														</div>
+														
+														<div class="col-lg-6 col-md-6 col-sm-12 form-group">
+															<input type="email" name="email" placeholder="Email" required="">
+															<span class="icon flaticon-edit-1"></span>
+														</div>
+														
+														<div class="col-lg-6 col-md-6 col-sm-12 form-group">
+															<input type="text" name="phone" placeholder="Phone" required="">
+															<span class="icon flaticon-edit-1"></span>
+														</div>
+														
+														<div class="col-lg-12 col-md-12 col-sm-12 form-group">
+															<select class="custom-select-box">
+																<option>Member Type</option>
+																<option>Member 01</option>
+																<option>Member 02</option>
+																<option>Member 03</option>
+																<option>Member 04</option>
+																<option>Member 05</option>
+															</select>
+														</div>
+														
+														
+														<div class="col-lg-12 col-md-12 col-sm-12 form-group text-right">
+															<button class="theme-btn btn-style-one" type="submit" name="submit-form"><span class="txt">Записаться<i class="fa fa-angle-right"></i></span></button>
+														</div>
+														
+													</div>
+												</form>
+													
+											</div>
+												
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+					</div>
+				</div>
+				
+			</div>
+			
+		</div>
+		
+	</section>
+	<!-- End Profile Section -->
+{% endblock %}
