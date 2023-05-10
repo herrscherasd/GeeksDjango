@@ -82,7 +82,7 @@
 										<li><a href="error.html">Not Found / 404</a></li>
 									</ul>
 								</li>
-								<li><a href="contact.html">Contact Us</a></li>
+								<li><a href="{% url 'contacts' %}">Contact Us</a></li>
 							</ul>
 						</div>
 					</nav>
@@ -129,7 +129,7 @@
 	<!-- Search Boxed -->
 	<div class="search-boxed">
 		<div class="search-box">
-			<form method="post" action="contact.html">
+			<form method="post" action="{% url 'contacts' %}">
 				<div class="form-group">
 					<input type="search" name="search-field" value="" placeholder="What do you want to learn?" required>
 					<button type="submit"><span class="icon fa fa-search"></span></button>
@@ -299,6 +299,12 @@
 	</div>
 </section>
 <!-- End Courses Section -->
+
+<form action="" method="post">
+{% csrf_token %}
+{{ form }}
+<input type="submit" value="Ответить">
+</form>
 <!-- Call To Action Section -->
 <section class="call-to-action-section">
 	<div class="auto-container">
@@ -318,7 +324,7 @@
 				<div class="inner-column">
 					<div class="help">For Help?</div>
 					<div class="search-box">
-						<form method="post" action="contact.html">
+						<form method="post" action="{% url 'contacts' %}">
 							<div class="form-group">
 								<input type="search" name="search-field" value="" placeholder="What do you want to learn?" required>
 								<button type="submit"><span class="icon fa fa-search"></span></button>
@@ -616,7 +622,7 @@
 										<li><a href="# ">About us</a></li>
 										<li><a href="# ">Features</a></li>
 										<li><a href="# ">Pricing</a></li>
-										<li><a href="# ">Contact</a></li>
+										<li><a href="{% url 'contacts' %} ">Contact</a></li>
 									</ul>
 								</div>
 							</div>

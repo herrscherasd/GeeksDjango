@@ -26,7 +26,11 @@
 				
 					<!-- Profile Form -->
 					<form method="post" action="sendemail.php" id="contact-form">
-						<div class="row clearfix">
+						{% csrf_token %}
+						{{ form.as_p }}
+					</form>
+
+						<!-- <div class="row clearfix">
 							
 							<div class="col-lg-6 col-md-6 col-sm-12 form-group">
 								<input type="text" name="username" placeholder="First Name*" required="">
@@ -53,7 +57,7 @@
 							</div>
 							
 						</div>
-					</form>
+					</form> -->
 						
 				</div>
 				

@@ -3,6 +3,7 @@ from django.views import generic
 from django.urls import reverse_lazy
 
 from apps.academy.models import Academy
+from apps.academy.forms import CourseFeedBackForm
 
 # Create your views here.
 class IndexView(generic.ListView):
@@ -14,7 +15,9 @@ class AboutView(generic.TemplateView):
     template_name = 'about.html'
 
 class ContactsView(generic.TemplateView):
-    template_name = 'contacts.html'
+    template_name = 'contact.html'
 
-# class CourseDetailView(generic.DetailView):
-    
+class UserFeedbackView(generic.FormView):
+    form_class = CourseFeedBackForm
+    success_url = "index"
+    template_name = 'contact.html'
