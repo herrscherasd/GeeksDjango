@@ -3,7 +3,7 @@ from django.shortcuts import redirect
 from django.urls import reverse_lazy
 from django.views import generic
 
-from apps.academy.models import Academy, Courses
+from apps.academy.models import Academy, Courses, SettingsModel,AboutModel,SlideModel,CourseModel
 from apps.academy.forms import CourseFeedBackForm
 
 # Create your views here.
@@ -23,3 +23,23 @@ class UserFeedbackView(generic.FormView):
     def form_valid(self, form):
         form.save()
         return redirect(self.success_url)
+    
+def index(request):
+    setting = Setting.objects.latest("id")
+    about = About.objects.latest("id")
+    slide = Slide.objects.latest("id")
+    course = Course.objects.all()
+    context = {
+        'setting': setting,
+        'about':about,
+        'slide':slide,
+        'course':course,
+    }
+    return render(request, "index.html", context)
+
+def contact(request):
+    setting = Setting.objects.latest("id")
+    context = {
+        'setting': setting
+    }
+    return render(request, "contact.html", context)

@@ -3,14 +3,14 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Bootcamp HTML Template | Contact</title>
+<title>{{setting.title}} | {{setting.descriptions}}</title>
 <!-- Stylesheets -->
 <link href="{% static 'css/bootstrap.css '%}" rel="stylesheet">
 <link href="{% static 'css/main.css '%}" rel="stylesheet">
 <link href="{% static 'css/responsive.css '%}" rel="stylesheet">
 
-<link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
-<link rel="icon" href="images/favicon.png" type="image/x-icon">
+<link rel="shortcut icon" href="{{setting.logo.url}}" type="image/x-icon">
+<link rel="icon" href="{{setting.logo.url}}" type="image/x-icon">
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Titillium+Web:wght@300;400;600;700;900&display=swap" rel="stylesheet">
 
@@ -40,7 +40,7 @@
 				<div class="top-left pull-left clearfix">
 					<!-- Info List -->
 					<ul class="info-list">
-						<li><span>Контакты: </span><a href="tel:+996 777 777 777 "> +996 507 052 018 </a></li>
+						<li><span>Контакты: </span><a href="tel:{{setting.phone}} "> {{setting.phone}} </a></li>
 					</ul>
 				</div>
 				<!-- Top Right -->
@@ -55,7 +55,7 @@
 			<div class="clearfix">
 				<div class="pull-left logo-box">
 					<div class="logo">
-						<a href=" {% url 'index' %} "><img src="{% static 'logo/logo.png' %}" width="150" alt="" title="GEEKS"></a>
+						<a href=" {% url 'index' %} "><img src="{{setting.logo.url}}" width="150" alt="" title="GEEKS"></a>
 					</div>
 				</div>
 				<div class="nav-outer clearfix">
