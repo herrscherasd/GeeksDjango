@@ -1,0 +1,74 @@
+{% extends 'homepage.html' %}
+{% load static %}
+{% block content %}
+	<!-- Page Title -->
+    <section class="page-title">
+        <div class="auto-container">
+			<h1>Contact Us</h1>
+			
+        </div>
+    </section>
+    <!--End Page Title-->
+	
+	<!-- Contact Page Section -->
+
+			<!-- Contact Info Section -->
+			<div class="contact-info-section">
+				<div class="title-box">
+					<h2>Contact Information</h2>
+				</div>
+				
+				<div class="row clearfix">
+					
+					<!-- Info Column -->
+					<div class="info-column col-lg-4 col-md-6 col-sm-12">
+						<div class="info-inner">
+							<div class="icon fa fa-phone"></div>
+							<strong>Phone</strong>
+							<ul>
+								<li><a href="tel:+1-123-456-7890">{{setting.phone}}</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="info-column col-lg-4 col-md-6 col-sm-12">
+						<div class="info-inner">
+							<div class="icon fa fa-phone"></div>
+							<strong>Email</strong>
+							<ul>
+								<li><a href="tel:+1-123-456-7890">{{setting.email}}</a></li>
+							</ul>
+						</div>
+					</div>
+					<!-- Info Column -->
+					<div class="info-column col-lg-4 col-md-6 col-sm-12">
+						<div class="info-inner">
+							<div class="icon fa fa-map-marker"></div>
+							<strong>Address</strong>
+							<ul>
+								<li>{{setting.locate}}</li>
+							</ul>
+						</div>
+					</div>
+					
+				</div>
+				
+			</div>
+			
+		</div>
+	</section>
+	<!-- End Contact Page Section -->
+	
+	<!-- Map Section -->
+	<section class="map-section">
+		<!-- Map Boxed -->
+		<div class="map-boxed">
+			<!--Map Outer-->
+			<div class="map-outer">
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3032.986312127367!2d72.80043672421792!3d40.51979362892043!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38bdaf51e4e11011%3A0x2dd3bbd34364f3e1!2zSVQt0LrRg9GA0YHRiyDQmtGD0YDRgdGLINC_0YDQvtCz0YDQsNC80LzQuNGA0L7QstCw0L3QuNGPINCe0YggR2Vla3M!5e0!3m2!1sru!2skg!4v1683738026026!5m2!1sru!2skg" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+			</div>
+		</div>
+	</section>
+	<!-- End Map Section -->
+	
+
+{% endblock %}

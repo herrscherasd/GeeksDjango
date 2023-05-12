@@ -1,0 +1,171 @@
+{% extends "homepage.html" %} {% load static %} {% block content %}
+
+<!-- Banner Section -->
+<section class="banner-section">
+	<div class="pattern-layer" style="background-image: url({{slide.image.url}})"></div>
+	<div class="auto-container">
+		<!-- Content Boxed -->
+		<div class="content-boxed">
+			<div class="inner-column"> </div>
+			<h1> {{slide.title}}</h1>
+			<h6> {{slide.descriptions}} </h6> </h1>
+			</p>
+			<div class="buttons-box"> <a style="background-color:rgb(161, 161, 14) ;" href="follow/" class="theme-btn btn-style-two"><span   class="txt">Начать обучение  <i class="fa fa-angle-right"></i></span></a> </div>
+		</div>
+	</div>
+	<!-- Image Boxed -->
+
+</section>
+<!-- End Banner Section -->
+<!-- Education Section -->
+<section class="education-section">
+	<div class="patern-layer-one paroller" data-paroller-factor="0.60" data-paroller-factor-lg="0.20" data-paroller-type="foreground" data-paroller-direction="vertical" style="background-image: url({% static 'images/icons/icon-1.png' %})"></div>
+	<div class="patern-layer-two paroller" data-paroller-factor="0.60" data-paroller-factor-lg="-0.20" data-paroller-type="foreground" data-paroller-direction="vertical" style="background-image: url({% static 'images/icons/icon-2.png' %})"></div>
+	<div class="auto-container">
+		<div class="row clearfix">
+			<!-- Image Column -->
+			<div class="image-column col-lg-6 col-md-12 col-sm-12">
+				<div class="inner-column parallax-scene-1">
+					<div class="image parallax-layer" data-depth="0.40"> <img src="{{about.image.url}}" alt="" /> </div>
+				</div>
+			</div>
+			<!-- Content Column -->
+			<div class="content-column col-lg-6 col-md-12 col-sm-12">
+				<div class="inner-column">
+					<h2>{{about.title}} <br> 	</h2>
+					<div class="text">{{about.decriptions}}</div> </div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- End Education Section -->
+<!-- Courses Section -->
+<section class="courses-section">
+	<div class="auto-container">
+		<div class="row clearfix">
+			<!-- Title Column -->
+			<div class="title-column col-lg-4 col-md-12 col-sm-12">
+				<div class="inner-column">
+					<!-- Sec Title -->
+					<div class="sec-title">
+						<h2>Наши курсы</h2>
+						<div class="text">Обучаем с нуля самым актуальным профессиям, востребованным по всему миру.</div>
+					</div> </div>
+			</div>
+			<!-- Cource Block -->
+         {% for course in course %}
+			<div class="cource-block col-lg-4 col-md-6 col-sm-12" >
+				<div class="inner-box">
+					<div class="image">
+						<a href="follow/"><img src="{{course.image.url}}" style="max-width:200px;" alt="" /></a>
+					</div>
+					<div class="lower-content">
+						<div class="clearfix">
+							<div class="pull-left">
+								<h5><a href="follow/">{{course.title}}</a></h5> </div>
+							<div class="pull-right">
+								<div class="price"></div>
+							</div>
+						</div>
+						<div class="text">{{course.descriptions}}</div>
+						<div class="clearfix">
+							<div class="pull-left">
+								<div class="students"></div>
+							</div>
+							<div class="pull-right"> <a href="follow/" class="enroll">Записаться</a> </div>
+						</div>
+					</div>
+				</div>
+			</div>
+         {% endfor %}
+		</div>
+	</div>
+</section>
+<!-- End Courses Section -->
+<!-- Video Section -->
+<section class="video-section" style="background-image: url({% static 'images/background/background_video.jpeg' %})">
+	<div class="auto-container"> <a href="https://https://www.youtube.com/watch?v=AOw0475dyK8&t=5s" class="lightbox-image video-box"><span class="fa fa-play"><i class="ripple"></i></span></a>
+		<h4>Посмотреть отзыв о GEEKS</h4> </div>
+</section>
+<!-- End Video Section -->
+<!-- Achievement Section -->
+<section class="achievements-section">
+	<div class="auto-container">
+		<!-- Sec Title -->
+		<div class="sec-title centered">
+			<h2>Our achievements</h2>
+			<div class="text">Почему стоит задуматься о карьере в IT?</div>
+		</div>
+		<!-- Fact Counter -->
+		<div class="fact-counter">
+			<div class="row clearfix">
+				<!-- Column -->
+				<div class="column counter-column col-lg-4 col-md-6 col-sm-12">
+					<div class="inner wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+						<div class="content">
+							<div class="icon-box"> <span class="icon flaticon-course"></span> </div>
+							<h4 class="counter-title">Всего выпускников</h4>
+							<div class="count-outer count-box"> <span class="count-text" data-speed="2000" data-stop="50">0</span>K+ </div>
+						</div>
+					</div>
+				</div>
+				<!-- Column -->
+				<div class="column counter-column col-lg-4 col-md-6 col-sm-12">
+					<div class="inner wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
+						<div class="content">
+							<div class="icon-box"> <span class="icon flaticon-course-1"></span> </div>
+							<h4 class="counter-title">Всего студентов</h4>
+							<div class="count-outer count-box alternate"> <span class="count-text" data-speed="3000" data-stop="45">0</span>K+ </div>
+						</div>
+					</div>
+				</div>
+				<!-- Column -->
+				<div class="column counter-column col-lg-4 col-md-6 col-sm-12">
+					<div class="inner wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms">
+						<div class="content">
+							<div class="icon-box"> <span class="icon flaticon-world"></span> </div>
+							<h4 class="counter-title">Сфера работы</h4>
+							<div class="count-outer count-box"> <span class="count-text" data-speed="4000" data-stop="115">0</span> </div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- End Achievement Section -->
+
+<!-- Testimonial Section -->
+<section class="testimonial-section">
+	<div class="auto-container">
+		<!-- Sec Title -->
+		<div class="sec-title centered">
+			<h2>Где работают наши выпускники</h2> </div>
+		<!-- Authors Box -->
+		<div class="authors-box">
+			<div class="author-one"><img src="{% static 'images/resource/round1.png' %}" alt="" /></div>
+			<div class="author-two"><img src="{% static 'images/resource/round2.png' %}" alt="" /></div>
+			<div class="author-three"><img src="{% static 'images/resource/round4.png' %}" alt="" /></div>
+			<div class="author-four"><img src="{% static 'images/resource/round9.png' %}" alt="" /></div>
+			<div class="author-five"><img src="{% static 'images/resource/round5.png' %}" alt="" /></div>
+			<div class="author-six"><img src="{% static 'images/resource/round6.png' %}" alt="" /></div>
+			<div class="author-seven"><img src="{% static 'images/resource/round7.png' %}" alt="" /></div>
+			<div class="author-eight"><img src="{% static 'images/resource/round8.png' %}" alt="" /></div>
+		</div>
+		<div class="single-item-carousel owl-carousel owl-theme">
+			<!-- Testimonial Block Two -->
+			<div class="testimonial-block">
+				<div class="inner-box">
+					<div class="image-box">
+						<div class="quote-icon flaticon-quote-5"></div>
+						<div class="image"> <img src="{% static 'images/resource/round3.png' %}" alt="" /> </div>
+					</div>
+					<div class="text">Наши выпускники трудятся в передовых компаниях Кыргызстана и СНГ, таких как:</div>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+</section>
+<!-- End Testimonial Section -->
+{% endblock %}
